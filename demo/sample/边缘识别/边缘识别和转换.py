@@ -59,7 +59,7 @@ def perTran(image, pts):
 
 def main():
 
-    image = cv2.imread("./opencv_sample/images/hello.png")
+    image = cv2.imread("./images/hello.png")
     output = image.copy()
 
     # 转换成灰度图像
@@ -68,10 +68,10 @@ def main():
     # 双边滤波器能够做到平滑去噪的同时还能够很好的保存边缘
 
     # bilateralFilter 入参说明
-    # src：输入图像
-    # d：过滤时周围每个像素领域的直径
-    # sigmaColor：在color space中过滤sigma。参数越大，临近像素将会在越远的地方mix。
-    # sigmaSpace：在coordinate space中过滤sigma。参数越大，那些颜色足够相近的的颜色的影响越大。
+    #   src：输入图像
+    #   d：过滤时周围每个像素领域的直径
+    #   sigmaColor：在color space中过滤sigma。参数越大，临近像素将会在越远的地方mix。
+    #   sigmaSpace：在coordinate space中过滤sigma。参数越大，那些颜色足够相近的的颜色的影响越大。
     gray = cv2.bilateralFilter(gray, 11, 17, 17)
     
     # 检测边缘
